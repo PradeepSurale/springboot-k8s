@@ -1,0 +1,7 @@
+commonLabels:
+  app: hello
+
+resources:
+- ./backend/deployment.yaml
+- ./backend/service.yaml
+#- configMap.yaml

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      deployment: hello
+  template:
+    metadata:
+      labels:
+        deployment: hello
+    spec:
+      containers:
+      - name: the-container
+        image: pradeepsurale/springbootk8s
+        command: ["java","-jar","/app.jar"]
+        ports:
+        - containerPort: 8080
